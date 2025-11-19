@@ -338,7 +338,7 @@ function submitExam(){
     else if(ans===examData.keys[i])subjData[s].correct++;
     else subjData[s].wrong++;
     subjData[s].total++;
-  }
+  });
     sendToSheet({
     name: progress.student.name,
     section: progress.student.sec,
