@@ -338,7 +338,15 @@ function submitExam(){
     else if(ans===examData.keys[i])subjData[s].correct++;
     else subjData[s].wrong++;
     subjData[s].total++;
-  });
+  }
+    sendToSheet({
+    name: progress.student.name,
+    section: progress.student.sec,
+    roll: progress.student.roll,
+    adm: progress.student.adm,
+    correct, wrong, blank, total, marks,
+    answers: progress.answers
+  });                           
 
   let html=`<h2 style="color:#4B0082;">🎉 Congratulations, ${progress.student.name}</h2>
   <div><b>Section:</b> ${progress.student.sec} | <b>Roll:</b> ${progress.student.roll} | <b>Admission No:</b> ${progress.student.adm}</div>
